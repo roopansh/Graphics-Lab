@@ -1,0 +1,10 @@
+#include <windows.h>
+#include "Parabola.h"
+
+MyMenu MENU DISCARDABLE 
+BEGIN
+  MENUITEM "&Parabola", ID_PARABOLA
+  MENUITEM "&Clear",   ID_CLEAR
+  MENUITEM "&Exit",    ID_EXIT
+END
+
