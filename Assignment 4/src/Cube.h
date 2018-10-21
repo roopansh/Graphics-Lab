@@ -1,0 +1,1 @@
+void setCubeData(double cubeSide);

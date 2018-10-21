@@ -1,0 +1,66 @@
+# Project: P8_3_Transform3D
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = P8_3_Transform3D_private.res
+OBJ      = WMain.o Cone.o Cube.o Cylinder.o Draw3D.o DrawShape.o DrawUtil3D.o Global3D.o Line.o Sphere.o Transform3D.o TransformGlobal.o $(RES)
+LINKOBJ  = WMain.o Cone.o Cube.o Cylinder.o Draw3D.o DrawShape.o DrawUtil3D.o Global3D.o Line.o Sphere.o Transform3D.o TransformGlobal.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = P8_3_Transform3D.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+WMain.o: WMain.cpp
+	$(CPP) -c WMain.cpp -o WMain.o $(CXXFLAGS)
+
+Cone.o: Cone.cpp
+	$(CPP) -c Cone.cpp -o Cone.o $(CXXFLAGS)
+
+Cube.o: Cube.cpp
+	$(CPP) -c Cube.cpp -o Cube.o $(CXXFLAGS)
+
+Cylinder.o: Cylinder.cpp
+	$(CPP) -c Cylinder.cpp -o Cylinder.o $(CXXFLAGS)
+
+Draw3D.o: Draw3D.cpp
+	$(CPP) -c Draw3D.cpp -o Draw3D.o $(CXXFLAGS)
+
+DrawShape.o: DrawShape.cpp
+	$(CPP) -c DrawShape.cpp -o DrawShape.o $(CXXFLAGS)
+
+DrawUtil3D.o: DrawUtil3D.cpp
+	$(CPP) -c DrawUtil3D.cpp -o DrawUtil3D.o $(CXXFLAGS)
+
+Global3D.o: Global3D.cpp
+	$(CPP) -c Global3D.cpp -o Global3D.o $(CXXFLAGS)
+
+Line.o: Line.cpp
+	$(CPP) -c Line.cpp -o Line.o $(CXXFLAGS)
+
+Sphere.o: Sphere.cpp
+	$(CPP) -c Sphere.cpp -o Sphere.o $(CXXFLAGS)
+
+Transform3D.o: Transform3D.cpp
+	$(CPP) -c Transform3D.cpp -o Transform3D.o $(CXXFLAGS)
+
+TransformGlobal.o: TransformGlobal.cpp
+	$(CPP) -c TransformGlobal.cpp -o TransformGlobal.o $(CXXFLAGS)
+
+P8_3_Transform3D_private.res: P8_3_Transform3D_private.rc Draw3D.rc
+	$(WINDRES) -i P8_3_Transform3D_private.rc --input-format=rc -o P8_3_Transform3D_private.res -O coff 
+
