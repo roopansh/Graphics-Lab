@@ -391,7 +391,7 @@ void rotateNew(POINT3D & cartesianPt, double angle)
      double b = 1.0/sqrt(3.0);
      double c = 1.0/sqrt(3.0);
      double d = sqrt(1/3.0 +1/3.0);
-     double theta =(3.14159265359*angle)/180;
+     double theta = -(3.14159265359*angle)/180;
      double Rxalpha[4][4];
      Rxalpha[0][0]=Rxalpha[3][3]=1;
      Rxalpha[0][1]=Rxalpha[0][2]=Rxalpha[0][3]=Rxalpha[1][3]=Rxalpha[2][3]=Rxalpha[1][0]=Rxalpha[2][0]=Rxalpha[3][0]=Rxalpha[3][1]=Rxalpha[3][2]=0;
